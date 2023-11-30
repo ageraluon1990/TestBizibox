@@ -14,7 +14,7 @@ create TABLE IF NOT EXISTS black_list (
 
 create TABLE IF NOT EXISTS call_data (
         id bigint not null auto_increment,
-        time_now TIMESTAMP,
+        time TIMESTAMP,
         call_type varchar(255),
         duration bigint,
         phone_number varchar(255),

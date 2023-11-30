@@ -18,9 +18,9 @@ public class UserController {
     private ServiceBlackList serviceBlackList;
     private ServiceContactList serviceContactList;
 
-    @GetMapping("/allRecords")
+    @GetMapping("/allrecords")
     public ResponseEntity getAllCallByPhone(@RequestParam(name = "phone") String phone,
-                                            @RequestParam(name = "duration") long duration){
+                                            @RequestParam(name = "duration") Long duration){
         try {
             return ResponseEntity.ok(serviceCallData.findAll(phone,duration));
         }catch (PhoneNotFound e){

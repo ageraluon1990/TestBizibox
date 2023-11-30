@@ -1,6 +1,5 @@
 package com.example.testbizibox.service;
 
-import com.example.testbizibox.entity.BlackList;
 import com.example.testbizibox.entity.ContactList;
 import com.example.testbizibox.repo.ContactListRepo;
 import lombok.AllArgsConstructor;
