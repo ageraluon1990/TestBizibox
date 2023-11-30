@@ -1,0 +1,30 @@
+version: '3'
+services:
+  sqlserver:
+    image: mysql:8.0-debian
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: user_api
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - "6033:3306"
+    volumes:
+      - './mysql-data:/var/lib/mysql'
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-container
+    environment:
+      PMA_HOST: sqlserver
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    links:
+      - sqlserver
+    ports:
+      - "81:80"
+    depends_on:
+      - sqlserver
+    extra_hosts:
+      - "localhost:172.18.0.3"
