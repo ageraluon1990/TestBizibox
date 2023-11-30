@@ -18,7 +18,7 @@ public class UserController {
     private ServiceBlackList serviceBlackList;
     private ServiceContactList serviceContactList;
 
-    @GetMapping("/allrecords")
+    @GetMapping("/allRecords")
     public ResponseEntity getAllCallByPhone(@RequestParam(name = "phone") String phone,
                                             @RequestParam(name = "duration") Long duration){
         try {
