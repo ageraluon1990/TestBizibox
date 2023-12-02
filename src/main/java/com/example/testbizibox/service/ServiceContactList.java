@@ -3,14 +3,15 @@ package com.example.testbizibox.service;
 import com.example.testbizibox.entity.ContactList;
 import com.example.testbizibox.repo.ContactListRepo;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ServiceContactList {
-    private ContactListRepo contactListRepo;
+    private final ContactListRepo contactListRepo;
 
     public void findByAllPhone(String oldPhone, String newPhone){
         List<ContactList> data = contactListRepo.findAllByPhone(oldPhone);

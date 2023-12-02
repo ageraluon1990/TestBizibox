@@ -42,10 +42,10 @@ public class ServiceCallData {
 
     String phone = callData.getPhoneNumber();
     List<BlackList> data = serviceBlackList.findPhone(phone);
+    List<ContactList> contactLists = serviceContactList.findPhone(phone);
     if (!data.isEmpty()){
       throw new BlackPhoneAlreadyExist("this phone on black list");
     }
-    List<ContactList> contactLists = serviceContactList.findPhone(phone);
     if (contactLists.isEmpty()){
       callData.setSaveContact(true);
     } else {

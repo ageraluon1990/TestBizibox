@@ -2,16 +2,16 @@ package com.example.testbizibox.service;
 
 import com.example.testbizibox.entity.BlackList;
 import com.example.testbizibox.repo.BlackListRepo;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ServiceBlackList {
 
-    private BlackListRepo blackListRepo;
+    private final BlackListRepo blackListRepo;
 
     public void findByAllPhone(String oldPhone, String newPhone){
         List<BlackList> data = blackListRepo.findAllByPhone(oldPhone);
